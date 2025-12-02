@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KO掌机助手 - 下载</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .logo {
+      font-size: 64px;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      font-size: 42px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #00d9ff, #00ff88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 24px;
+    }
+
+    .version-badge {
+      display: inline-block;
+      background: rgba(0, 217, 255, 0.15);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      color: #00d9ff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .downloads {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .download-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .download-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(0, 217, 255, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .card-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #00d9ff, #00ff88);
+      color: #1a1a2e;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      margin-top: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .download-card:hover .download-btn {
+      transform: scale(1.05);
+    }
+
+    .features {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 40px;
+    }
+
+    .features-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .feature-item::before {
+      content: "✓";
+      color: #00ff88;
+      font-weight: bold;
+    }
+
+    .footer {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: #00d9ff;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .qq-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 8px 16px;
+      border-radius: 8px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    @media (max-width: 600px) {
+      .title {
+        font-size: 32px;
+      }
+      
+      .downloads {
+        grid-template-columns: 1fr;
+      }
+      
+      .download-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">🎮</div>
+      <h1 class="title">KO掌机助手</h1>
+      <p class="subtitle">专为Windows掌机打造的性能调节工具</p>
+      <span class="version-badge">v1.0.0</span>
+    </header>
+
+    <div class="downloads">
+      <a href="./KO掌机助手_1.0.0_x64-setup.exe" class="download-card" download>
+        <div class="card-icon">📦</div>
+        <h2 class="card-title">安装版</h2>
+        <p class="card-desc">
+          标准安装程序，自动配置开机启动、创建快捷方式。适合大多数用户。
+        </p>
+        <div class="card-meta">
+          <span>📁 约 67 MB</span>
+          <span>💻 Windows 10/11</span>
+        </div>
+        <div class="download-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7,10 12,15 17,10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          下载安装版
+        </div>
+      </a>
+
+      <a href="./KO掌机助手_1.0.0_绿色版.zip" class="download-card" download>
+        <div class="card-icon">📂</div>
+        <h2 class="card-title">绿色免安装版</h2>
+        <p class="card-desc">
+          解压即用，无需安装。适合便携使用或不想修改系统的用户。
+        </p>
+        <div class="card-meta">
+          <span>📁 约 78 MB</span>
+          <span>💻 Windows 10/11</span>
+        </div>
+        <div class="download-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7,10 12,15 17,10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          下载绿色版
+        </div>
+      </a>
+    </div>
+
+    <div class="features">
+      <h3 class="features-title">✨ 主要功能</h3>
+      <div class="features-grid">
+        <div class="feature-item">TDP 功率调节</div>
+        <div class="feature-item">风扇控制</div>
+        <div class="feature-item">显示设置</div>
+        <div class="feature-item">陀螺仪映射</div>
+        <div class="feature-item">游戏库管理</div>
+        <div class="feature-item">修改器下载</div>
+        <div class="feature-item">GPU 设置 (AMD)</div>
+        <div class="feature-item">系统优化</div>
+        <div class="feature-item">手柄全局导航</div>
+        <div class="feature-item">自动游戏配置</div>
+        <div class="feature-item">多主题支持</div>
+        <div class="feature-item">永久免费</div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>
+        <a href="https://github.com/koboling/gpd-control-panel" target="_blank">GitHub</a>
+        &nbsp;·&nbsp;
+        作者: koboling
+        &nbsp;·&nbsp;
+        开源协议: MIT
+      </p>
+      <div class="qq-group">
+        💬 交流群: 178193167
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
