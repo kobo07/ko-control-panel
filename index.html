@@ -333,8 +333,8 @@
     </footer>
   </div>
   <script>
-    // 自动获取最新版本信息（通过 EdgeOne CDN 加速）
-    fetch('https://kopanel.kobo07.cn/kobo07/ko-control-panel/releases/latest/download/latest.json')
+    // 自动获取最新版本信息（通过 jsDelivr CDN）
+    fetch('https://cdn.jsdelivr.net/gh/kobo07/ko-control-panel@latest/latest.json')
       .then(r => r.json())
       .then(data => {
         // 更新版本号
