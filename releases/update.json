@@ -1,0 +1,11 @@
+﻿{
+    "platforms":  {
+                      "windows-x86_64":  {
+                                             "signature":  "",
+                                             "url":  "https://cdn.jsdelivr.net/gh/kobo07/ko-control-panel@main/releases/KoPanel_0.9.52_x64-setup.nsis.zip"
+                                         }
+                  },
+    "pub_date":  "2025-12-18T02:40:57Z",
+    "version":  "0.9.52",
+    "notes":  "1"
+}
