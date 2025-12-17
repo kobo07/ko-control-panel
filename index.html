@@ -333,19 +333,26 @@
     </footer>
   </div>
   <script>
-    // 自动获取最新版本信息（通过 GitHub raw）
-    fetch('https://raw.githubusercontent.com/kobo07/ko-control-panel/main/latest.json')
+    // 通过 GitHub API 获取最新 release 信息（无缓存问题）
+    fetch('https://api.github.com/repos/kobo07/ko-control-panel/releases/latest')
       .then(r => r.json())
-      .then(data => {
+      .then(release => {
         // 更新版本号
-        document.querySelector('.hero-badge').textContent = 'v' + data.version;
-        // 更新安装版
-        document.getElementById('card-setup').href = data.download_url;
-        document.getElementById('file-size').textContent = (data.file_size / 1024 / 1024).toFixed(0) + ' MB';
-        // 更新绿色版
-        if (data.portable_url) {
-          document.getElementById('card-portable').href = data.portable_url;
-          document.getElementById('portable-size').textContent = (data.portable_size / 1024 / 1024).toFixed(0) + ' MB';
+        document.querySelector('.hero-badge').textContent = release.tag_name;
+        
+        // 查找安装版和绿色版
+        const assets = release.assets || [];
+        const setupAsset = assets.find(a => a.name.includes('setup.exe') && !a.name.includes('.sig'));
+        const portableAsset = assets.find(a => a.name.includes('portable.zip'));
+        
+        if (setupAsset) {
+          document.getElementById('card-setup').href = setupAsset.browser_download_url;
+          document.getElementById('file-size').textContent = (setupAsset.size / 1024 / 1024).toFixed(0) + ' MB';
+        }
+        
+        if (portableAsset) {
+          document.getElementById('card-portable').href = portableAsset.browser_download_url;
+          document.getElementById('portable-size').textContent = (portableAsset.size / 1024 / 1024).toFixed(0) + ' MB';
         }
       })
       .catch(() => {});
