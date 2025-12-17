@@ -1,13 +1,13 @@
 ﻿{
     "version":  "0.9.70",
-    "portable_url":  "https://kopanel.kobo07.cn/kobo07/ko-control-panel/releases/download/v0.9.70/KoPanel_0.9.70_x64-portable.zip",
-    "download_url":  "https://kopanel.kobo07.cn/kobo07/ko-control-panel/releases/download/v0.9.70/KoPanel_0.9.70_x64-setup.exe",
-    "pub_date":  "2025-12-18T05:11:02Z",
+    "portable_url":  "https://github.com/kobo07/ko-control-panel/releases/download/v0.9.70/KoPanel_0.9.70_x64-portable.zip",
+    "download_url":  "https://github.com/kobo07/ko-control-panel/releases/download/v0.9.70/KoPanel_0.9.70_x64-setup.exe",
+    "pub_date":  "2025-12-18T05:16:20Z",
     "file_size":  44035671,
     "platforms":  {
                       "windows-x86_64":  {
                                              "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTRWZhWVdnanNOdjZKZU5kNjJvLzlTdm5TQUJQYnJhdnZNV3NjbUlrZ1NVZkxKbjE4RndzVG84aXd0T3F5KzBHL012cWk3WjhFL1Q2eTYrQmV6RUQxSnlGMk9oZ1B1ZGdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzY2MDA1Nzg5CWZpbGU6S29QYW5lbF8wLjkuNzBfeDY0LXNldHVwLmV4ZQpYaDBBenFuMnBBVU5BSGxsOUd1bDltQ1ZRTVJtNEg2SGdPWkQwRzkyVVFWVjVlWjFZWWgyWHNQMU1GRTJZcGtwSlBKdHMraUd3ZnZubFY5cHpFalhEdz09Cg==",
-                                             "url":  "https://kopanel.kobo07.cn/kobo07/ko-control-panel/releases/download/v0.9.70/KoPanel_0.9.70_x64-setup.exe"
+                                             "url":  "https://github.com/kobo07/ko-control-panel/releases/download/v0.9.70/KoPanel_0.9.70_x64-setup.exe"
                                          }
                   },
     "notes":  "11",
