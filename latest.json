@@ -1,6 +1,6 @@
 {
-  "version": "0.9.74",
-  "notes": "移除 Tauri updater 插件，改用简单的 GitHub 更新检查",
-  "download_url": "https://github.com/kobo07/ko-control-panel/releases/download/v0.9.74/KoPanel_0.9.74_x64-setup.exe",
-  "portable_url": "https://github.com/kobo07/ko-control-panel/releases/download/v0.9.74/KoPanel_0.9.74_x64-portable.zip"
+  "version": "0.9.75",
+  "notes": "新增赛博紫配色方案",
+  "download_url": "https://github.com/kobo07/ko-control-panel/releases/download/v0.9.75/KoPanel_0.9.75_x64-setup.exe",
+  "portable_url": "https://github.com/kobo07/ko-control-panel/releases/download/v0.9.75/KoPanel_0.9.75_x64-portable.zip"
 }
